@@ -1,0 +1,11 @@
+{
+  "name": "@esmaeilabedi/types",
+  "version": "0.0.1",
+  "private": true,
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "scripts": {
+    "lint": "eslint .",
+    "build": "echo 'No build step needed for Types package'"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "name": "esmaeilabedi-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:website": "yarn workspace website dev",
+    "dev:admin": "yarn workspace admin dev",
+    "build:website": "yarn workspace website build",
+    "build:admin": "yarn workspace admin build",
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "start:website": "yarn workspace website start",
+    "start:admin": "yarn workspace admin start",
+    "lint": "yarn workspaces run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "db:generate": "yarn workspace @esmaeilabedi/database db:generate",
+    "db:push": "yarn workspace @esmaeilabedi/database db:push",
+    "db:seed": "yarn workspace @esmaeilabedi/database db:seed"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.0",
+    "turbo": "^1.10.12"
+  },
+  "dependencies": {
+    "@types/node": "^24.0.10",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.11",
+    "typescript": "^5.8.3"
+  }
+}

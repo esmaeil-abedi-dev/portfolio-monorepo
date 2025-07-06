@@ -1,0 +1,130 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../lib/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+// User model for authentication
+model User {
+  id        String   @id @default(cuid())
+  name      String
+  email     String   @unique
+  password  String
+  role      String   @default("user")
+  image     String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  posts     Post[]
+  projects  Project[]
+}
+
+// Blog post model
+model Post {
+  id          String   @id @default(cuid())
+  title       String
+  slug        String   @unique
+  excerpt     String
+  content     String   // Will store JSON string of content blocks
+  coverImage  String?
+  template    String?  // To store content template (standard, immersive, story, etc.)
+  accentColor String?  // Optional accent color for styling
+  featured    Boolean  @default(false)
+  published   Boolean  @default(false)
+  publishedAt DateTime?
+  category    String?
+  readTime    String?
+  metaTitle   String?
+  metaDescription String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  authorId    String
+  author      User     @relation(fields: [authorId], references: [id])
+  tags        Tag[]
+  sections    ContentSection[] // New relation for structured content sections
+}
+
+// Project model
+model Project {
+  id            String   @id @default(cuid())
+  title         String
+  slug          String   @unique
+  description   String
+  content       String   // Will store JSON string of content blocks
+  coverImage    String?
+  template      String?  // To store content template (standard, portfolio, technical, etc.)
+  accentColor   String?  // Optional accent color for styling
+  sections      ContentSection[] // New relation for structured content sections
+  featured      Boolean  @default(false)
+  published     Boolean  @default(false)
+  category      String?
+  demoUrl       String?
+  repoUrl       String?
+  completedDate String?
+  metaTitle     String?
+  metaDescription String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  authorId      String
+  author        User     @relation(fields: [authorId], references: [id])
+  tags          Tag[]
+  galleryImages GalleryImage[]
+}
+
+// Tag model for both posts and projects
+model Tag {
+  id        String   @id @default(cuid())
+  name      String   @unique
+  posts     Post[]
+  projects  Project[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// Gallery image model for projects
+model GalleryImage {
+  id        String   @id @default(cuid())
+  url       String
+  alt       String?
+  projectId String
+  project   Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// Content section model for rich content
+model ContentSection {
+  id          String   @id @default(cuid())
+  type        String   // Type of section: text, image, code, quote, link, video, etc.
+  content     String   // JSON content specific to the section type
+  metadata    String?  // Optional JSON metadata for the section
+  order       Int      // Order of the section in the content
+  postId      String?
+  post        Post?    @relation(fields: [postId], references: [id], onDelete: Cascade)
+  projectId   String?
+  project     Project? @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// Media model for uploaded files
+model Media {
+  id        String   @id @default(cuid())
+  name      String
+  url       String
+  type      String
+  size      Int
+  width     Int?
+  height    Int?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
