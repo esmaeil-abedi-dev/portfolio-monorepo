@@ -1,17 +1,19 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/preflight";
+@import "tailwindcss";
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: var(--font-montserrat), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  
+  /* Color definitions */
+  --color-primary: #1A2B40;
+  --color-primary-light: #2C3E50;
+  --color-primary-dark: #0F1A2A;
+  --color-accent: #00C4B4;
+  --color-accent-light: #00DECF;
+  --color-accent-dark: #00A396;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -21,8 +23,18 @@
   }
 }
 
+/* Base styles */
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  min-height: 100vh;
+}
+
+/* Custom gradient text class - can be used with class="text-gradient" */
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, var(--color-primary), var(--color-accent));
 }

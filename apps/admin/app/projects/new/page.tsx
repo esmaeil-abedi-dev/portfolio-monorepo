@@ -1,12 +1,10 @@
-import { Metadata } from "next";
+'use client';
+
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { FaSave, FaTimes, FaImage, FaGithub, FaGlobe } from "react-icons/fa";
 
-export const metadata: Metadata = {
-  title: "New Project | Esmaeil Abedi Admin",
-  description: "Create a new project for Esmaeil Abedi's personal website",
-};
+// Metadata now imported from metadata.ts file
 
 export default function NewProjectPage() {
   return (

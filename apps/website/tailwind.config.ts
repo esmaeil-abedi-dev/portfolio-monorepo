@@ -14,14 +14,12 @@ const config: Config = {
         primary: "#1A2B40",
         primaryLight: "#2C3E50",
         primaryDark: "#0F1A2A",
+        background: "#FFFFFF", // Clean White
+        "background-alt": "#F8F8F8", // Light Gray
         accent: {
           DEFAULT: "#00C4B4", // Vibrant Teal
           light: "#00DECF",
           dark: "#00A396",
-        },
-        background: {
-          DEFAULT: "#FFFFFF", // Clean White
-          alt: "#F8F8F8",     // Light Gray
         },
       },
       fontFamily: {

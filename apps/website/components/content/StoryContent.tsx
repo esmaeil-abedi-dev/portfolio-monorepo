@@ -209,7 +209,7 @@ function renderStorySection(section: ContentSection, accentColor?: string) {
     case 'link':
       return <LinkSection section={section} />;
     default:
-      return <div>Unknown section type: {section.type}</div>;
+      return <div>Unknown section type</div>;
   }
 }
 

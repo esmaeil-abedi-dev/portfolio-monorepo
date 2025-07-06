@@ -28,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${montserrat.variable}`}>
-      <body className="min-h-screen bg-gray-50 font-sans">
+      <body className="min-h-screen bg-background font-sans">
         <div className="flex h-screen overflow-hidden">
           {/* Sidebar */}
           <AdminSidebar />

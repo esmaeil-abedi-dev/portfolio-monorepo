@@ -1,10 +1,8 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Link from "next/link";
-import { motion } from "framer-motion";
-import { FaArrowLeft, FaCalendarAlt, FaClock, FaTag } from "react-icons/fa";
-import { Button } from "@/components/ui/Button";
-import ContentRenderer from "@/components/content/ContentRenderer";
+
+import BlogPostPageClient from "@/components/blog/BlogPostPageClient";
+import { getAllPosts } from "@/lib/actions/posts";
 
 // Mock blog post data (would be fetched from an API/CMS in production)
 const blogPosts = [
@@ -12,7 +10,8 @@ const blogPosts = [
     id: "nextjs-ai-integration",
     title: "Integrating AI Features into Next.js Applications",
     slug: "integrating-ai-features-into-nextjs-applications",
-    excerpt: "A comprehensive guide to adding AI capabilities to your Next.js applications using TensorFlow.js, OpenAI API, and other tools.",
+    excerpt:
+      "A comprehensive guide to adding AI capabilities to your Next.js applications using TensorFlow.js, OpenAI API, and other tools.",
     date: "2023-06-15",
     readTime: "8 min read",
     category: "Development",
@@ -256,13 +255,14 @@ const blogPosts = [
       <p>Integrating AI features into your Next.js applications can significantly enhance their capabilities and user experience. While there is a learning curve, libraries like TensorFlow.js and APIs like OpenAI make it accessible for front-end developers to incorporate AI functionality without deep machine learning expertise.</p>
 
       <p>As AI technologies continue to evolve, the possibilities for web applications will only expand. By starting to integrate these features now, you'll be well-positioned to leverage advancements in AI for your Next.js projects in the future.</p>
-    `
+    `,
   },
   {
     id: "typescript-best-practices",
     title: "TypeScript Best Practices for Front-End Developers in 2023",
     slug: "typescript-best-practices-for-frontend-developers",
-    excerpt: "Learn how to write clean, maintainable TypeScript code with these modern best practices for front-end development.",
+    excerpt:
+      "Learn how to write clean, maintainable TypeScript code with these modern best practices for front-end development.",
     date: "2023-05-20",
     readTime: "6 min read",
     category: "Development",
@@ -299,12 +299,15 @@ const blogPosts = [
       </code></pre>
 
       <h2>Content continued...</h2>
-    `
-  }
+    `,
+  },
 ];
 
-// Generate metadata for the page dynamically
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
   // Find the post by slug
   const post = blogPosts.find((post) => post.slug === params.slug);
 
@@ -329,7 +332,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default function BlogPostPage({ params }: { params: { slug: string } }) {
+export default async function BlogPostPage({ params }: { params: { slug: string } }) {
   // Find the post by slug
   const post = blogPosts.find((post) => post.slug === params.slug);
 
@@ -338,228 +341,5 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     notFound();
   }
 
-  // Format date for display
-  const formatDate = (dateString: string): string => {
-    const options: Intl.DateTimeFormatOptions = { 
-      year: 'numeric', 
-      month: 'long', 
-      day: 'numeric' 
-    };
-    return new Date(dateString).toLocaleDateString('en-US', options);
-  };
-
-  return (
-    <main className="py-16 bg-background">
-      <div className="container mx-auto px-4">
-        {/* Back to Blog */}
-        <motion.div
-          className="mb-8"
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.4 }}
-        >
-          <Link href="/blog">
-            <Button variant="ghost" className="flex items-center gap-2 text-muted-foreground">
-              <FaArrowLeft size={14} />
-              Back to Blog
-            </Button>
-          </Link>
-        </motion.div>
-
-        {/* Post Header */}
-        <motion.header
-          className="mb-12"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          {/* Post Title */}
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-[#1A2B40] mb-6 leading-tight">
-            {post.title}
-          </h1>
-          
-          {/* Post Meta */}
-          <div className="flex flex-wrap items-center gap-4 mb-8 text-muted-foreground">
-            <div className="flex items-center gap-1">
-              <FaCalendarAlt size={14} />
-              <span>{formatDate(post.date)}</span>
-            </div>
-            
-            <div className="flex items-center gap-1">
-              <FaClock size={14} />
-              <span>{post.readTime}</span>
-            </div>
-            
-            <div className="flex items-center gap-1">
-              <FaTag size={14} />
-              <span>{post.category}</span>
-            </div>
-          </div>
-          
-          {/* Featured Image */}
-          <div className="relative h-64 md:h-96 w-full rounded-xl overflow-hidden mb-8">
-            {/* Placeholder for now - would be actual images in production */}
-            <div className="bg-gradient-to-br from-primary/70 to-accent/70 h-full w-full flex items-center justify-center">
-              <span className="text-white font-heading text-2xl">
-                Featured Image for: {post.title.split(' ')[0]}
-              </span>
-            </div>
-          </div>
-          
-          {/* Tags */}
-          <div className="flex flex-wrap gap-2 mb-8">
-            {post.tags.map((tag, index) => (
-              <span 
-                key={index} 
-                className="text-sm font-medium bg-accent/10 text-accent px-3 py-1 rounded-full"
-              >
-                #{tag}
-              </span>
-            ))}
-          </div>
-        </motion.header>
-        
-        {/* Post Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-          {/* Main Content */}
-          <motion.article 
-            className="lg:col-span-8 bg-white rounded-xl p-6 md:p-10 shadow-md"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            {/* Use ContentRenderer for rich story-telling UI */}
-            <div>
-              {/* In production, this would use the template from post.template */}
-              <ContentRenderer 
-                content={post.content} 
-                template="story"
-                animateContent={true}
-              />
-            </div>
-          </motion.article>
-          
-          {/* Sidebar */}
-          <motion.aside 
-            className="lg:col-span-4"
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            {/* Author Card */}
-            <div className="bg-white rounded-xl p-6 shadow-md mb-8">
-              <div className="flex items-center gap-4 mb-4">
-                <div className="relative w-16 h-16 rounded-full overflow-hidden">
-                  {/* Placeholder for author image */}
-                  <div className="bg-gradient-to-br from-primary to-accent h-full w-full flex items-center justify-center text-white">
-                    EA
-                  </div>
-                </div>
-                
-                <div>
-                  <h3 className="text-lg font-semibold">Esmaeil Abedi</h3>
-                  <p className="text-muted-foreground">Front-End Developer & AI Enthusiast</p>
-                </div>
-              </div>
-              
-              <p className="text-muted-foreground mb-4">
-                Front-end developer specializing in React, Next.js, and integrating AI features into web applications.
-              </p>
-              
-              <Link href="/about">
-                <Button variant="outline" className="w-full">
-                  About Me
-                </Button>
-              </Link>
-            </div>
-            
-            {/* Share Card */}
-            <div className="bg-white rounded-xl p-6 shadow-md mb-8">
-              <h3 className="text-lg font-semibold mb-4">Share this Post</h3>
-              <div className="flex justify-between">
-                <Button variant="outline" className="flex-1 mx-1">
-                  Twitter
-                </Button>
-                <Button variant="outline" className="flex-1 mx-1">
-                  LinkedIn
-                </Button>
-                <Button variant="outline" className="flex-1 mx-1">
-                  Facebook
-                </Button>
-              </div>
-            </div>
-            
-            {/* Newsletter */}
-            <div className="bg-primary text-white rounded-xl p-6 shadow-md">
-              <h3 className="text-lg font-semibold mb-2">Newsletter</h3>
-              <p className="opacity-90 mb-4">
-                Subscribe to my newsletter for the latest articles and updates.
-              </p>
-              <form>
-                <input 
-                  type="email" 
-                  placeholder="Your email address" 
-                  className="w-full mb-3 px-4 py-2 rounded-md text-foreground focus:outline-none"
-                  required
-                />
-                <Button type="submit" className="w-full bg-accent">
-                  Subscribe
-                </Button>
-              </form>
-            </div>
-          </motion.aside>
-        </div>
-        
-        {/* Related Posts (static for now) */}
-        <motion.section 
-          className="mt-16"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-        >
-          <h2 className="text-2xl font-heading font-semibold text-[#1A2B40] mb-6">
-            Related Articles
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.filter(p => p.id !== post.id).slice(0, 3).map((relatedPost) => (
-              <article 
-                key={relatedPost.id}
-                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
-              >
-                {/* Post Image */}
-                <div className="relative h-40 w-full">
-                  {/* Placeholder for now - would be actual images in production */}
-                  <div className="bg-gradient-to-br from-gray-700 to-gray-900 h-full w-full flex items-center justify-center">
-                    <span className="text-white font-heading text-lg">
-                      {relatedPost.title.split(' ')[0]}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Post Content */}
-                <div className="p-6">
-                  <h3 className="text-lg font-heading font-bold text-[#1A2B40] mb-2">
-                    <Link href={`/blog/${relatedPost.slug}`} className="hover:text-accent transition-colors">
-                      {relatedPost.title}
-                    </Link>
-                  </h3>
-                  
-                  <p className="text-muted-foreground mb-4 line-clamp-2">
-                    {relatedPost.excerpt}
-                  </p>
-                  
-                  <Link href={`/blog/${relatedPost.slug}`}>
-                    <Button variant="ghost" className="w-full">
-                      Read Article
-                    </Button>
-                  </Link>
-                </div>
-              </article>
-            ))}
-          </div>
-        </motion.section>
-      </div>
-    </main>
-  );
+  return <BlogPostPageClient post={post} />;
 }

@@ -1,0 +1,4 @@
+text-primary
+bg-primary
+text-accent
+bg-accent
