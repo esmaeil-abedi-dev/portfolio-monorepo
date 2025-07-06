@@ -1,13 +1,11 @@
-import { Metadata } from "next";
+'use client';
+
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { FaSave, FaTimes, FaImage } from "react-icons/fa";
 import ContentEditor from "@/components/content/ContentEditor";
 
-export const metadata: Metadata = {
-  title: "New Post | Esmaeil Abedi Admin",
-  description: "Create a new blog post for Esmaeil Abedi's personal website",
-};
+// Metadata now needs to be in a separate file for client components
 
 export default function NewPostPage() {
   return (

@@ -10,11 +10,10 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: {
-          DEFAULT: "#1A2B40", // Deep Navy Blue
-          light: "#2C3E50",
-          dark: "#0F1A2A",
-        },
+        // For Tailwind v4, we need to define colors directly
+        primary: "#1A2B40",
+        primaryLight: "#2C3E50",
+        primaryDark: "#0F1A2A",
         accent: {
           DEFAULT: "#00C4B4", // Vibrant Teal
           light: "#00DECF",
