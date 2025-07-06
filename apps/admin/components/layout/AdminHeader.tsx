@@ -6,7 +6,7 @@ const AdminHeader = () => {
     <header className="h-16 bg-white border-b border-gray-200">
       <div className="h-full px-6 flex items-center justify-between">
         <div>
-          <h1 className="text-xl font-semibold text-primary">CMS Admin</h1>
+          <h1 className="text-xl font-semibold text-[#1A2B40]">CMS Admin</h1>
         </div>
         
         <div className="flex items-center space-x-4">

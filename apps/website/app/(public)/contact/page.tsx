@@ -18,7 +18,7 @@ export default function ContactPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="text-4xl md:text-5xl font-heading font-bold text-primary mb-4">
+          <h1 className="text-4xl md:text-5xl font-heading font-bold text-[#1A2B40] mb-4">
             Get in Touch
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -34,7 +34,7 @@ export default function ContactPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="bg-white p-6 md:p-8 rounded-lg shadow-md"
           >
-            <h2 className="text-2xl font-heading font-semibold text-primary mb-6">
+            <h2 className="text-2xl font-heading font-semibold text-[#1A2B40] mb-6">
               Send me a Message
             </h2>
 
@@ -183,7 +183,7 @@ export default function ContactPage() {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="bg-accent/10 p-6 md:p-8 rounded-lg shadow-md"
             >
-              <h2 className="text-2xl font-heading font-semibold text-primary mb-4">
+              <h2 className="text-2xl font-heading font-semibold text-[#1A2B40] mb-4">
                 Availability
               </h2>
               <p className="text-foreground mb-4">

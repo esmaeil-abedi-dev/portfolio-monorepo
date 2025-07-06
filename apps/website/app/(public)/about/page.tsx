@@ -36,7 +36,7 @@ export default function AboutPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="text-4xl md:text-5xl font-heading font-bold text-primary mb-4">
+          <h1 className="text-4xl md:text-5xl font-heading font-bold text-[#1A2B40] mb-4">
             About Me
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -71,7 +71,7 @@ export default function AboutPage() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h2 className="text-2xl md:text-3xl font-heading font-semibold text-primary mb-4">
+            <h2 className="text-2xl md:text-3xl font-heading font-semibold text-[#1A2B40] mb-4">
               Esmaeil Abedi
             </h2>
             <h3 className="text-xl text-accent mb-6">
@@ -110,7 +110,7 @@ export default function AboutPage() {
           initial="hidden"
           animate="show"
         >
-          <h2 className="text-3xl font-heading font-bold text-primary mb-10 text-center">
+          <h2 className="text-3xl font-heading font-bold text-[#1A2B40] mb-10 text-center">
             Technical Skills
           </h2>
 
@@ -120,7 +120,7 @@ export default function AboutPage() {
               className="bg-white p-6 rounded-lg shadow-md"
               variants={itemVariants}
             >
-              <h3 className="text-xl font-semibold text-primary mb-4">
+              <h3 className="text-xl font-semibold text-[#1A2B40] mb-4">
                 Frontend Development
               </h3>
               <ul className="space-y-2">
@@ -172,7 +172,7 @@ export default function AboutPage() {
               className="bg-white p-6 rounded-lg shadow-md"
               variants={itemVariants}
             >
-              <h3 className="text-xl font-semibold text-primary mb-4">
+              <h3 className="text-xl font-semibold text-[#1A2B40] mb-4">
                 Tools & Testing
               </h3>
               <ul className="space-y-2">
@@ -224,7 +224,7 @@ export default function AboutPage() {
               className="bg-white p-6 rounded-lg shadow-md"
               variants={itemVariants}
             >
-              <h3 className="text-xl font-semibold text-primary mb-4">
+              <h3 className="text-xl font-semibold text-[#1A2B40] mb-4">
                 AI & Machine Learning
               </h3>
               <ul className="space-y-2">
@@ -280,7 +280,7 @@ export default function AboutPage() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <h2 className="text-3xl font-heading font-bold text-primary mb-10 text-center">
+          <h2 className="text-3xl font-heading font-bold text-[#1A2B40] mb-10 text-center">
             Professional Journey
           </h2>
 
@@ -288,7 +288,7 @@ export default function AboutPage() {
             {/* Job 1 */}
             <div className="relative">
               <div className="absolute -left-10 mt-1.5 h-6 w-6 rounded-full border-4 border-accent bg-background"></div>
-              <h3 className="text-xl font-semibold text-primary">Senior Front-End Engineer</h3>
+              <h3 className="text-xl font-semibold text-[#1A2B40]">Senior Front-End Engineer</h3>
               <p className="text-accent font-medium">TechInnovate Inc. | 2020 - Present</p>
               <p className="mt-2 text-foreground">
                 Leading front-end development for enterprise-level React applications, implementing AI-powered features, 
@@ -300,7 +300,7 @@ export default function AboutPage() {
             {/* Job 2 */}
             <div className="relative">
               <div className="absolute -left-10 mt-1.5 h-6 w-6 rounded-full border-4 border-accent bg-background"></div>
-              <h3 className="text-xl font-semibold text-primary">Front-End Developer</h3>
+              <h3 className="text-xl font-semibold text-[#1A2B40]">Front-End Developer</h3>
               <p className="text-accent font-medium">WebSolutions Co. | 2017 - 2020</p>
               <p className="mt-2 text-foreground">
                 Developed responsive web applications using React and TypeScript. Collaborated with design team to implement 
@@ -311,7 +311,7 @@ export default function AboutPage() {
             {/* Job 3 */}
             <div className="relative">
               <div className="absolute -left-10 mt-1.5 h-6 w-6 rounded-full border-4 border-accent bg-background"></div>
-              <h3 className="text-xl font-semibold text-primary">Junior Web Developer</h3>
+              <h3 className="text-xl font-semibold text-[#1A2B40]">Junior Web Developer</h3>
               <p className="text-accent font-medium">DigiCreative Agency | 2015 - 2017</p>
               <p className="mt-2 text-foreground">
                 Started career building websites using HTML, CSS, and JavaScript. Created interactive elements for 
@@ -327,13 +327,13 @@ export default function AboutPage() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
-          <h2 className="text-3xl font-heading font-bold text-primary mb-10 text-center">
+          <h2 className="text-3xl font-heading font-bold text-[#1A2B40] mb-10 text-center">
             Education
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold text-primary">M.Sc. Computer Science</h3>
+              <h3 className="text-xl font-semibold text-[#1A2B40]">M.Sc. Computer Science</h3>
               <p className="text-accent font-medium">University of Technology | 2013 - 2015</p>
               <p className="mt-2 text-foreground">
                 Specialized in Artificial Intelligence and Machine Learning, with a thesis on &quot;Integrating Neural Networks 
@@ -342,7 +342,7 @@ export default function AboutPage() {
             </div>
 
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold text-primary">B.Sc. Computer Engineering</h3>
+              <h3 className="text-xl font-semibold text-[#1A2B40]">B.Sc. Computer Engineering</h3>
               <p className="text-accent font-medium">State University | 2009 - 2013</p>
               <p className="mt-2 text-foreground">
                 Focused on software development fundamentals, data structures, and algorithms. Completed capstone project 
@@ -359,7 +359,7 @@ export default function AboutPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.8 }}
         >
-          <h2 className="text-2xl font-heading font-semibold text-primary mb-4">
+          <h2 className="text-2xl font-heading font-semibold text-[#1A2B40] mb-4">
             Let&apos;s Work Together
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">

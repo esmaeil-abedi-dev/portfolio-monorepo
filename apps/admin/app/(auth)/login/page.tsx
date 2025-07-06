@@ -13,7 +13,7 @@ export default function LoginPage() {
       <div className="flex flex-1 flex-col justify-center px-4 py-12 sm:px-6 lg:px-8 lg:flex-none lg:max-w-md xl:max-w-lg">
         <div className="w-full max-w-sm mx-auto lg:w-96">
           <div className="mb-10">
-            <h1 className="text-3xl font-bold text-primary mb-2">Admin Login</h1>
+            <h1 className="text-3xl font-bold text-[#1A2B40] mb-2">Admin Login</h1>
             <p className="text-gray-600">
               Welcome back! Please sign in to continue.
             </p>
@@ -89,7 +89,7 @@ export default function LoginPage() {
           <div className="mb-8">
             {/* Logo/Avatar placeholder - would be replaced with actual image */}
             <div className="bg-white rounded-full h-20 w-20 flex items-center justify-center shadow-lg">
-              <span className="text-2xl font-bold text-primary">EA</span>
+              <span className="text-2xl font-bold text-[#1A2B40]">EA</span>
             </div>
           </div>
           <h2 className="text-2xl font-bold text-white mb-2">Esmaeil Abedi</h2>

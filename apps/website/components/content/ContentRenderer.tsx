@@ -246,7 +246,7 @@ function renderQuote(section: ContentSection) {
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
     >
-      <span className="text-5xl text-primary leading-none block mb-2">&ldquo;</span>
+      <span className="text-5xl text-[#1A2B40] leading-none block mb-2">&ldquo;</span>
       <p className="text-xl md:text-2xl font-serif italic text-gray-700 px-5 md:px-12">{text}</p>
       {attribution && (
         <footer className="mt-4 text-gray-500">

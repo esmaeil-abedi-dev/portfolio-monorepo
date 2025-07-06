@@ -160,7 +160,7 @@ export default function ProjectsPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="text-4xl md:text-5xl font-heading font-bold text-primary mb-4">
+          <h1 className="text-4xl md:text-5xl font-heading font-bold text-[#1A2B40] mb-4">
             My Projects
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -180,13 +180,13 @@ export default function ProjectsPage() {
           <button className="bg-primary text-white px-6 py-2 rounded-full text-sm font-medium">
             All Projects
           </button>
-          <button className="bg-white hover:bg-gray-100 text-primary px-6 py-2 rounded-full text-sm font-medium transition-colors">
+          <button className="bg-white hover:bg-gray-100 text-[#1A2B40] px-6 py-2 rounded-full text-sm font-medium transition-colors">
             Web Apps
           </button>
-          <button className="bg-white hover:bg-gray-100 text-primary px-6 py-2 rounded-full text-sm font-medium transition-colors">
+          <button className="bg-white hover:bg-gray-100 text-[#1A2B40] px-6 py-2 rounded-full text-sm font-medium transition-colors">
             AI Projects
           </button>
-          <button className="bg-white hover:bg-gray-100 text-primary px-6 py-2 rounded-full text-sm font-medium transition-colors">
+          <button className="bg-white hover:bg-gray-100 text-[#1A2B40] px-6 py-2 rounded-full text-sm font-medium transition-colors">
             UI/UX Design
           </button>
         </motion.div>
@@ -231,7 +231,7 @@ export default function ProjectsPage() {
                   ))}
                 </div>
                 
-                <h2 className="text-xl font-heading font-bold text-primary mb-2">
+                <h2 className="text-xl font-heading font-bold text-[#1A2B40] mb-2">
                   {project.title}
                 </h2>
                 
@@ -265,7 +265,7 @@ export default function ProjectsPage() {
                         href={project.repoUrl} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="text-primary hover:text-primary-light"
+                        className="text-[#1A2B40] hover:text-[#1A2B40]-light"
                         aria-label="View source code on GitHub"
                       >
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -294,7 +294,7 @@ export default function ProjectsPage() {
             I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
           </p>
           <Link href="/contact">
-            <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary">
+            <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-[#1A2B40]">
               Let&apos;s Talk
             </Button>
           </Link>

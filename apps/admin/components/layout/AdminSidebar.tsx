@@ -30,7 +30,7 @@ const AdminSidebar = () => {
   return (
     <aside className="h-screen w-64 bg-background-alt border-r border-gray-200">
       <div className="p-5">
-        <h1 className="text-xl font-heading font-bold text-primary">Esmaeil&apos;s CMS</h1>
+        <h1 className="text-xl font-heading font-bold text-[#1A2B40]">Esmaeil&apos;s CMS</h1>
       </div>
       
       <nav className="mt-6 px-3 space-y-1">

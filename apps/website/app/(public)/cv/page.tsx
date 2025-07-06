@@ -19,7 +19,7 @@ export default function CVPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="text-4xl md:text-5xl font-heading font-bold text-primary mb-4">
+          <h1 className="text-4xl md:text-5xl font-heading font-bold text-[#1A2B40] mb-4">
             Curriculum Vitae
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -81,7 +81,7 @@ export default function CVPage() {
           <div className="p-8">
             {/* Professional Summary */}
             <section className="mb-8">
-              <h3 className="text-2xl font-heading font-bold text-primary mb-4">Professional Summary</h3>
+              <h3 className="text-2xl font-heading font-bold text-[#1A2B40] mb-4">Professional Summary</h3>
               <p className="text-foreground">
                 Front-End Engineer with 8+ years of experience specializing in building modern, responsive, 
                 and accessible web applications. Proficient in React, Next.js, TypeScript, and integrating AI 
@@ -93,7 +93,7 @@ export default function CVPage() {
 
             {/* Skills */}
             <section className="mb-8">
-              <h3 className="text-2xl font-heading font-bold text-primary mb-4">Technical Skills</h3>
+              <h3 className="text-2xl font-heading font-bold text-[#1A2B40] mb-4">Technical Skills</h3>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
@@ -208,7 +208,7 @@ export default function CVPage() {
 
             {/* Work Experience */}
             <section className="mb-8">
-              <h3 className="text-2xl font-heading font-bold text-primary mb-4">Work Experience</h3>
+              <h3 className="text-2xl font-heading font-bold text-[#1A2B40] mb-4">Work Experience</h3>
 
               <div className="space-y-6">
                 {/* Job 1 */}
@@ -287,7 +287,7 @@ export default function CVPage() {
 
             {/* Education */}
             <section className="mb-8">
-              <h3 className="text-2xl font-heading font-bold text-primary mb-4">Education</h3>
+              <h3 className="text-2xl font-heading font-bold text-[#1A2B40] mb-4">Education</h3>
 
               <div className="space-y-6">
                 {/* Degree 1 */}
@@ -316,7 +316,7 @@ export default function CVPage() {
 
             {/* Certifications */}
             <section>
-              <h3 className="text-2xl font-heading font-bold text-primary mb-4">Certifications</h3>
+              <h3 className="text-2xl font-heading font-bold text-[#1A2B40] mb-4">Certifications</h3>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="flex items-center p-3 border border-gray-200 rounded-md">

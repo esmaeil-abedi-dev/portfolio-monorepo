@@ -67,8 +67,8 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
       
       <div className="p-5">
         <div className="flex justify-between items-start mb-2">
-          <h3 className="text-xl font-bold text-primary">{project.title}</h3>
-          <span className="text-xs font-medium px-2 py-1 bg-primary/10 text-primary rounded-full">
+          <h3 className="text-xl font-bold text-[#1A2B40]">{project.title}</h3>
+          <span className="text-xs font-medium px-2 py-1 bg-primary/10 text-[#1A2B40] rounded-full">
             {project.category}
           </span>
         </div>

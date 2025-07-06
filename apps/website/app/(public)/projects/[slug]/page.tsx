@@ -208,7 +208,7 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
           {/* Project Category and Title */}
           <div className="mb-6">
             <span className="text-accent font-medium">{project.category}</span>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-primary mt-2 leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-[#1A2B40] mt-2 leading-tight">
               {project.title}
             </h1>
           </div>
@@ -278,7 +278,7 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
           >
             {/* Project Overview */}
             <section className="bg-white rounded-xl p-6 md:p-8 shadow-md">
-              <h2 className="text-2xl font-heading font-bold text-primary mb-4">
+              <h2 className="text-2xl font-heading font-bold text-[#1A2B40] mb-4">
                 Project Overview
               </h2>
               <ContentRenderer 
@@ -290,7 +290,7 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
             
             {/* The Challenge */}
             <section className="bg-white rounded-xl p-6 md:p-8 shadow-md">
-              <h2 className="text-2xl font-heading font-bold text-primary mb-4">
+              <h2 className="text-2xl font-heading font-bold text-[#1A2B40] mb-4">
                 The Challenge
               </h2>
               <ContentRenderer 
@@ -302,7 +302,7 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
             
             {/* The Solution */}
             <section className="bg-white rounded-xl p-6 md:p-8 shadow-md">
-              <h2 className="text-2xl font-heading font-bold text-primary mb-4">
+              <h2 className="text-2xl font-heading font-bold text-[#1A2B40] mb-4">
                 The Solution
               </h2>
               <ContentRenderer 
@@ -314,7 +314,7 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
             
             {/* Project Gallery */}
             <section className="bg-white rounded-xl p-6 md:p-8 shadow-md">
-              <h2 className="text-2xl font-heading font-bold text-primary mb-6">
+              <h2 className="text-2xl font-heading font-bold text-[#1A2B40] mb-6">
                 Project Gallery
               </h2>
               
@@ -341,7 +341,7 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
           >
             {/* Technologies */}
             <div className="bg-white rounded-xl p-6 shadow-md">
-              <h3 className="text-xl font-heading font-semibold text-primary mb-4">
+              <h3 className="text-xl font-heading font-semibold text-[#1A2B40] mb-4">
                 Technologies Used
               </h3>
               <div className="flex flex-wrap gap-2">
@@ -358,7 +358,7 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
             
             {/* Key Features */}
             <div className="bg-white rounded-xl p-6 shadow-md">
-              <h3 className="text-xl font-heading font-semibold text-primary mb-4">
+              <h3 className="text-xl font-heading font-semibold text-[#1A2B40] mb-4">
                 Key Features
               </h3>
               <ul className="space-y-2">
@@ -377,14 +377,14 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
             
             {/* Tags */}
             <div className="bg-white rounded-xl p-6 shadow-md">
-              <h3 className="text-xl font-heading font-semibold text-primary mb-4">
+              <h3 className="text-xl font-heading font-semibold text-[#1A2B40] mb-4">
                 Tags
               </h3>
               <div className="flex flex-wrap gap-2">
                 {project.tags.map((tag, index) => (
                   <span 
                     key={index} 
-                    className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium"
+                    className="bg-primary/10 text-[#1A2B40] px-3 py-1 rounded-full text-sm font-medium"
                   >
                     #{tag}
                   </span>
@@ -401,7 +401,7 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
                 Explore my other projects to see more examples of my work in web development, AI integration, and UI/UX design.
               </p>
               <Link href="/projects">
-                <Button variant="outline" className="w-full border-white text-white hover:bg-white hover:text-primary">
+                <Button variant="outline" className="w-full border-white text-white hover:bg-white hover:text-[#1A2B40]">
                   View All Projects
                 </Button>
               </Link>
@@ -416,7 +416,7 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
-          <h2 className="text-2xl font-heading font-semibold text-primary mb-6">
+          <h2 className="text-2xl font-heading font-semibold text-[#1A2B40] mb-6">
             More Projects
           </h2>
           
@@ -435,7 +435,7 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
 
                 {/* Project Content */}
                 <div className="p-6">
-                  <h3 className="text-xl font-heading font-bold text-primary mb-2">
+                  <h3 className="text-xl font-heading font-bold text-[#1A2B40] mb-2">
                     {relatedProject.title}
                   </h3>
                   
@@ -468,7 +468,7 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
             Let&apos;s discuss how I can help bring your ideas to life with modern web technologies and AI integration.
           </p>
           <Link href="/contact">
-            <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary">
+            <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-[#1A2B40]">
               Get in Touch
             </Button>
           </Link>

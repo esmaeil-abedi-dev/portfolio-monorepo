@@ -51,7 +51,7 @@ const BlogPostCard = ({ post, index }: BlogPostCardProps) => {
           <span>{post.readingTime}</span>
         </div>
         
-        <h3 className="text-xl font-bold text-primary mb-3">
+        <h3 className="text-xl font-bold text-[#1A2B40] mb-3">
           {post.title}
         </h3>
         

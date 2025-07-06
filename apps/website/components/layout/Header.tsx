@@ -15,7 +15,7 @@ const NavItem = ({ href, label, isActive }: NavItemProps) => {
         "px-4 py-2 rounded-md transition-colors",
         isActive 
           ? "text-accent font-semibold"
-          : "text-primary hover:text-accent"
+          : "text-[#1A2B40] hover:text-accent"
       )}
     >
       {label}
@@ -27,7 +27,7 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 w-full bg-background/90 backdrop-blur-sm border-b border-gray-100">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-        <Link href="/" className="text-xl font-heading font-bold text-primary">
+        <Link href="/" className="text-xl font-heading font-bold text-[#1A2B40]">
           Esmaeil Abedi
         </Link>
 

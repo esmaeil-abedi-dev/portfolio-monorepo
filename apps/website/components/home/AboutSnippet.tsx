@@ -36,7 +36,7 @@ const AboutSnippet = () => {
             </div>
             
             <div className="w-full md:w-1/2">
-              <h2 className="text-3xl font-heading font-bold mb-4 text-primary">About Me</h2>
+              <h2 className="text-3xl font-heading font-bold mb-4 text-[#1A2B40]">About Me</h2>
               <p className="text-gray-600 mb-4">
                 With over 8 years of experience in front-end development, I&apos;m passionate about creating 
                 intuitive and performant user interfaces. Recently, I&apos;ve been exploring the 

@@ -374,7 +374,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           transition={{ duration: 0.6 }}
         >
           {/* Post Title */}
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-primary mb-6 leading-tight">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-[#1A2B40] mb-6 leading-tight">
             {post.title}
           </h1>
           
@@ -517,7 +517,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
-          <h2 className="text-2xl font-heading font-semibold text-primary mb-6">
+          <h2 className="text-2xl font-heading font-semibold text-[#1A2B40] mb-6">
             Related Articles
           </h2>
           
@@ -539,7 +539,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
 
                 {/* Post Content */}
                 <div className="p-6">
-                  <h3 className="text-lg font-heading font-bold text-primary mb-2">
+                  <h3 className="text-lg font-heading font-bold text-[#1A2B40] mb-2">
                     <Link href={`/blog/${relatedPost.slug}`} className="hover:text-accent transition-colors">
                       {relatedPost.title}
                     </Link>

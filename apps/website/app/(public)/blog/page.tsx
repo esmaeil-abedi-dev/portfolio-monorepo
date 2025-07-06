@@ -150,7 +150,7 @@ export default function BlogPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="text-4xl md:text-5xl font-heading font-bold text-primary mb-4">
+          <h1 className="text-4xl md:text-5xl font-heading font-bold text-[#1A2B40] mb-4">
             Blog
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -167,7 +167,7 @@ export default function BlogPage() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h2 className="text-2xl font-heading font-semibold text-primary mb-6">
+            <h2 className="text-2xl font-heading font-semibold text-[#1A2B40] mb-6">
               Featured Articles
             </h2>
 
@@ -200,7 +200,7 @@ export default function BlogPage() {
                       <span>{post.readTime}</span>
                     </div>
                     
-                    <h3 className="text-xl font-heading font-bold text-primary mb-2">
+                    <h3 className="text-xl font-heading font-bold text-[#1A2B40] mb-2">
                       <Link href={`/blog/${post.slug}`} className="hover:text-accent transition-colors">
                         {post.title}
                       </Link>
@@ -240,7 +240,7 @@ export default function BlogPage() {
           initial="hidden"
           animate="show"
         >
-          <h2 className="text-2xl font-heading font-semibold text-primary mb-6">
+          <h2 className="text-2xl font-heading font-semibold text-[#1A2B40] mb-6">
             All Articles
           </h2>
 
@@ -268,7 +268,7 @@ export default function BlogPage() {
                     <span>{post.readTime}</span>
                   </div>
                   
-                  <h3 className="text-lg font-heading font-bold text-primary mb-2">
+                  <h3 className="text-lg font-heading font-bold text-[#1A2B40] mb-2">
                     <Link href={`/blog/${post.slug}`} className="hover:text-accent transition-colors">
                       {post.title}
                     </Link>
