@@ -7,10 +7,17 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "../../packages/ui/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: "class",
   theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
+    },
     extend: {
       colors: {
-        // For Tailwind v4, we need to define colors directly
         primary: "#1A2B40",
         primaryLight: "#2C3E50",
         primaryDark: "#0F1A2A",
@@ -21,6 +28,9 @@ const config: Config = {
           light: "#00DECF",
           dark: "#00A396",
         },
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
       },
       fontFamily: {
         sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],

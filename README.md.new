@@ -1,0 +1,28 @@
+## Remote Caching
+
+Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+
+By default, Turborepo will cache locally. To enable Remote Caching:
+
+1. Create an account with Vercel: [Create account](https://vercel.com/signup)
+2. Link your Turborepo to your Remote Cache:
+
+```bash
+npx turbo login
+npx turbo link
+```
+
+## Guidelines for Adding New Packages
+
+When adding a new package to this monorepo:
+
+1. Create the package directory in `/packages/{package-name}`
+2. Set up the `package.json` with the naming convention `@esmaeilabedi/{package-name}`
+3. Add appropriate TypeScript and ESLint configurations
+4. Update the root `tsconfig.json` to include path mappings
+5. Add build, lint, and test scripts as needed
+6. Add the new package as a dependency to apps or other packages that will use it
+
+## License
+
+[MIT](./LICENSE)

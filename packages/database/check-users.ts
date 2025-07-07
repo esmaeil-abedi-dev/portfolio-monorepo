@@ -1,0 +1,1 @@
+import { PrismaClient } from "./lib/generated/prisma/index"; const prisma = new PrismaClient(); async function main() { console.log("Checking for users..."); const users = await prisma.user.findMany(); console.log(users); } main().catch(e => console.error(e)).finally(async () => { await prisma.$disconnect(); });

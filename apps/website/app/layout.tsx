@@ -3,6 +3,7 @@ import { Inter, Montserrat } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import Script from "next/script";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -29,6 +30,22 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${montserrat.variable}`}>
       <body className="min-h-screen flex flex-col bg-background font-sans">
+        {/* Prevent Vite from initializing */}
+        <Script id="vite-cleanup" strategy="beforeInteractive">
+          {`
+          // This script prevents any Vite initialization from happening
+          if (window.__vite_plugin_react_preamble_installed__) {
+            window.__vite_plugin_react_preamble_installed__ = false;
+          }
+          
+          // Clear any potential Vite-related localStorage items
+          Object.keys(localStorage || {}).forEach(key => {
+            if (key.includes('vite') || key.includes('react-refresh')) {
+              localStorage.removeItem(key);
+            }
+          });
+          `}
+        </Script>
         <Header />
         {children}
         <Footer />
