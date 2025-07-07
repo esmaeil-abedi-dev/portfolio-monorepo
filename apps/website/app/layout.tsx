@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import Script from "next/script";
+import ThemeInitializer from "@/components/ThemeInitializer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -30,6 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${montserrat.variable}`}>
       <body className="min-h-screen flex flex-col bg-background font-sans">
+        <ThemeInitializer />
         {/* Prevent Vite from initializing */}
         <Script id="vite-cleanup" strategy="beforeInteractive">
           {`

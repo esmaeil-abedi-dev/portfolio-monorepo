@@ -2,33 +2,31 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-heading: var(--font-montserrat), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-montserrat);
   
-  /* Color definitions */
-  --color-primary: #1A2B40;
-  --color-primary-light: #2C3E50;
-  --color-primary-dark: #0F1A2A;
-  --color-accent: #00C4B4;
-  --color-accent-light: #00DECF;
-  --color-accent-dark: #00A396;
+  --color-primary: 26 43 64;     /* #1A2B40 */
+  --color-primary-light: 44 62 80; /* #2C3E50 */
+  --color-primary-dark: 15 26 42;  /* #0F1A2A */
+  
+  --color-accent: 0 196 180;      /* #00C4B4 */
+  --color-accent-light: 0 222 207; /* #00DECF */
+  --color-accent-dark: 0 163 150;  /* #00A396 */
+  
+  --color-background: 255 255 255; /* #FFFFFF */
+  --color-background-alt: 248 248 248; /* #F8F8F8 */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-/* Base styles */
 body {
-  background-color: var(--background);
-  color: var(--foreground);
+  color: rgb(var(--color-primary));
+  background-color: white;
+  font-feature-settings: "rlig" 1, "calt" 1;
   font-family: var(--font-sans);
-  min-height: 100vh;
+}
+  
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: bold;
 }
 
 /* Custom gradient text class - can be used with class="text-gradient" */
@@ -36,5 +34,5 @@ body {
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  background-image: linear-gradient(to right, var(--color-primary), var(--color-accent));
+  background-image: linear-gradient(to right, rgb(var(--color-primary)), rgb(var(--color-accent)));
 }
